@@ -13,7 +13,7 @@ app.get("/", async (req: Request, res: Response, next) => {
   return next(error)
 })
 
-import { createPost, createProfile, createUser } from "@/controllers/api.controller"
+import { createPost, createProfile, createUser } from "@app/controllers/api.controller"
 
 app.post("/api/create-post", createPost)
 app.post("/api/create-profile", createProfile)

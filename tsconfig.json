@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "target": "es2016",
-    "module": "commonjs" /* Specify what module code is generated. */,
+    "module": "Node16" /* Specify what module code is generated. */,
+    "moduleResolution": "node16",
     "paths": {
-      "@/*": ["./src/*"]
+      "@app/*": ["./src/*"]
     },
     "outDir": "./dist" /* Specify an output folder for all emitted files. */,
     "esModuleInterop": true,

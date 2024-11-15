@@ -1,4 +1,6 @@
 {
+  "note-1": "while path alias is useful, it won't work on production unless used with some sort of bundler which we generally don't use in express-typescript",
   "why_not_to_do_path_alias": "You don't. Seriously. Path aliases are a tool to inform the TypeScript compiler about resolutions that are already happening in your environment, trying to use them to change how you import things is a misuse and adds extra complexity and often comes with issues (just like you're encountering now) because they're just not intended for this. It can be done, but then all your tools - your editor, test runner, whatever generators you might use, linters, etc. need to understand it and it's pain. TypeScript itself won't resolve the path aliases in imports for you, you need additional tools for that. Better just not do it.",
-  "how_to_do_path_alias": "install tsconfig-paths & set dev script as 'nodemon -r tsconfig-paths/register src/app.ts' on package.json"
+  "how_to_do_path_alias": "install tsconfig-paths and set dev script as 'nodemon -r tsconfig-paths/register src/app.ts' on package.json. But it will work only in development",
+  "how_to_have_it_work_production": "It won't and highly suggested not to. But if still want to. Visit link: https://stackoverflow.com/questions/61342753/paths-from-tsconfig-json-doesnt-work-after-tsc or in other words this should be the script of start `node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/index.js`"
 }
