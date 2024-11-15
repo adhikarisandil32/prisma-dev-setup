@@ -1,5 +1,6 @@
 import express, { NextFunction, Request, Response } from "express"
 import morgan from "morgan"
+
 const app = express()
 
 const PORT = 3375
@@ -18,6 +19,7 @@ app.post("/api/create-post", createPost)
 app.post("/api/create-profile", createProfile)
 app.post("/api/create-user", createUser)
 
+// Error handler
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
   console.log(error)
 

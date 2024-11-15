@@ -1,0 +1,4 @@
+{
+  "why_not_to_do_path_alias": "You don't. Seriously. Path aliases are a tool to inform the TypeScript compiler about resolutions that are already happening in your environment, trying to use them to change how you import things is a misuse and adds extra complexity and often comes with issues (just like you're encountering now) because they're just not intended for this. It can be done, but then all your tools - your editor, test runner, whatever generators you might use, linters, etc. need to understand it and it's pain. TypeScript itself won't resolve the path aliases in imports for you, you need additional tools for that. Better just not do it.",
+  "how_to_do_path_alias": "install tsconfig-paths & set dev script as 'nodemon -r tsconfig-paths/register src/app.ts' on package.json"
+}

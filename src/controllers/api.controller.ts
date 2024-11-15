@@ -1,4 +1,4 @@
-import { NextFunction } from "express"
+import { Request, Response, NextFunction } from "express"
 
 const createPost = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -10,7 +10,7 @@ const createPost = async (req: Request, res: Response, next: NextFunction) => {
 
 const createProfile = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    return res.status(200).json({ message: "profile created successfully" })
+    return res.status(200).json({ message: "profile created successfully here" })
   } catch (error) {
     next(error)
   }
